@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>To-Do List App - Easy Tutorials</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="sunakshi">
+            <!-- Registration Form -->
+            <div id="register-box">
+                <h2>Register</h2>
+                <form action="RegisterServlet" method="post" onsubmit="handleRegister(event)">
+                    <div class="input-group">
+                        <label>Name</label>
+                        <input type="text" name="username" id="register-name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" name="email" id="register-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" name="password" id="register-password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit">Register</button>
+                </form>
+                <p class="toggle-link" onclick="toggleToLogin()">Already have an account? Login</p>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-box" class="hidden">
+                <h2>Login</h2>
+                <form action="LoginServlet" method="post" onsubmit="handleLogin(event)">
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" name="email" id="login-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" name="password" id="login-password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <p class="toggle-link" onclick="toggleToRegister()">Don't have an account? Register</p>
+            </div>
+        </div>
+
+        <div class="container" id="todo-container" style="display: none;">
+            <div class="todo-app">
+                <h2>Task Manager: Stay organized! <img src="images/icon.png"></h2>
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="ADD your text">
+                    <button onclick="addTask()">ADD</button>
+                </div>
+                <ul id="list-container">
+                    <!-- List of tasks will be dynamically added here -->
+                </ul>
+            </div>    
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
